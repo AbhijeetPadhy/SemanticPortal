@@ -1,0 +1,21 @@
+
+#jumbo{
+	margin-left:50px;
+	margin-top: 50px;
+	margin-bottom:50px;
+	
+}
+
+#jumboout{
+	background-color:#2c3e50;
+	color:#ecf0f1;
+}
+
+div.page{
+	background-color: #fbfcfc;
+	box-shadow: 0px 0px 10px grey;
+	}
+	
+body {
+    background-color: #bdc3c7;
+}
