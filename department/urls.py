@@ -4,6 +4,8 @@ from . import views
 app_name = 'department'
 
 urlpatterns = [
-    # /music/
+    # /department/
     url(r'^$', views.index,name='index'),
+    # /department/department_Name/
+    url(r'^(?P<department_Name>[A-Za-z]+)/$', views.detail, name='detail'),
 ]
