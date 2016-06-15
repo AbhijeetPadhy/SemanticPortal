@@ -1,0 +1,16 @@
+{% extends 'department/base.html' %}
+
+{% block body %}
+  <h2>Welcome!</h2>
+  {% if all_departments %}
+    <h3>Here are all my departments: </h3>
+    <ul>
+      {% for dep in all_departments %}
+        <li><a href="{% url 'department:detail' dep.Name%}">{{ album.Name }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <h3>You don't have any Departments</h3>
+  {% endif %}
+
+{% endblock %}
