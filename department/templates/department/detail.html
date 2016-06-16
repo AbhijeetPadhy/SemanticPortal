@@ -2,15 +2,20 @@
 
 {% block body %}
   <h2>Welcome!</h2>
-  {% if all_departments %}
-    <h3>Here are all my departments: </h3>
-    <ul>
-      {% for dep in all_departments %}
-        <li><a href="{% url 'department:detail' dep.Name%}">{{ album.Name }}</a></li>
-      {% endfor %}
-    </ul>
+  {% if dep.Name %}
+    <h3>{{ dep.Name }} </h3>
+    {% for row in res1 %}
+    <div class="panel panel-default">
+      <div class="panel-heading">{{ row.name }}</div>
+      <div class="panel-body">
+        {{ row.designation }}<br>
+        {{ row.research }}<br>
+        {{ row.email }}
+      </div>
+    </div>
+    {% endfor %}
   {% else %}
-    <h3>You don't have any Departments</h3>
+    <h3>Invalid Department</h3>
   {% endif %}
 
 {% endblock %}
