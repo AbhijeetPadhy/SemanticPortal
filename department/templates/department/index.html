@@ -1,12 +1,18 @@
 {% extends 'department/base.html' %}
-
+{% block title %}
+Departments
+{% endblock %}
 {% block body %}
   <h2>Welcome!</h2>
   {% if all_departments %}
     <h3>Here are all my departments: </h3>
     <ul>
       {% for dep in all_departments %}
-        <li><a href="{% url 'department:detail' dep.Name%}">{{ dep.Name }}</a></li>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <a href="{% url 'department:detail' dep.Name%}">{{ dep.Name }}</a>
+        </div>
+      </div>
       {% endfor %}
     </ul>
   {% else %}
