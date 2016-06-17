@@ -1,5 +1,7 @@
 {% extends 'department/base.html' %}
-
+{% block title %}
+{{ dep.Name }}
+{% endblock %}
 {% block body %}
   <h2>Welcome!</h2>
   {% if dep.Name %}
