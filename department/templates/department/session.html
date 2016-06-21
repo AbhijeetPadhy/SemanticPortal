@@ -1,0 +1,40 @@
+{% extends 'department/base.html' %}
+{% block title %}
+{{ dep.Name }}
+{% endblock %}
+{% block body %}
+  <h2 class="page-header">{{ dep.Name }} : {{session.Start}} - {{session.End}}</h2>
+
+  <h3>Student Details</h3>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Roll</th>
+      <th>Redg No.</th>
+      <th>Address</th>
+      <th>Rsearch Under</th>
+      <th>Email</th>
+      <th>Blood Group</th>
+      <th>Height</th>
+      <th>Weight</th>
+    </tr>
+  {% if dep.Name %}
+    {% for row in res1 %}
+    <tr>
+      <td>{{ row.fname }} {{ row.lname }}</td>
+      <td>{{ row.roll }}</td>
+      <td>{{ row.regno }}</td>
+      <td>{{ row.address }}</td>
+      <td>{{ row.prof_fname }} {{ row.prof_lname }}</td>
+      <td>{{ row.email }}</td>
+      <td>{{ row.bgroup }}</td>
+      <td>{{ row.height }}</td>
+      <td>{{ row.weight }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+    <h3>Invalid Department</h3>
+  {% endif %}
+
+{% endblock %}
