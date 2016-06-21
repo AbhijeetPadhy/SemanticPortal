@@ -3,9 +3,21 @@
 {{ dep.Name }}
 {% endblock %}
 {% block body %}
-  <h2>Welcome!</h2>
+  <h2 class="page-header">{{ dep.Name }}</h2>
+
+  <h3>Sessions</h3>
+  <ul class="list-group">
   {% if dep.Name %}
-    <h3>{{ dep.Name }} </h3>
+    {% for sess in sessions %}
+      <li class="list-group-item"><a href="{% url 'department:session' dep.Name sess.Start %}">{{ sess.Start }} - {{ sess.End }}</a></li>
+    {% endfor %}
+  {% else %}
+    <h3>Invalid Department</h3>
+  {% endif %}
+  </ul>
+
+  <h3>Faculty Members</h3>
+  {% if dep.Name %}
     {% for row in res1 %}
     <div class="panel panel-default">
       <div class="panel-heading">{{ row.name }}</div>
