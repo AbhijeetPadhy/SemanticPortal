@@ -1,6 +1,6 @@
 {% extends 'department/base.html' %}
 {% block title %}
-{{ dep.Name }}
+{{ dep.Name }} - {{session.Start}} - {{session.End}}
 {% endblock %}
 {% block body %}
   <h2 class="page-header">{{ dep.Name }} : {{session.Start}} - {{session.End}}</h2>
