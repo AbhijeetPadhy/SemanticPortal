@@ -7,6 +7,12 @@ urlpatterns = [
     # /department/
     url(r'^$', views.index,name='index'),
 
+    # /department/results/
+    url(r'^results/$', views.results, name='results'),
+
+    # /department/results/display
+    url(r'^results/display$', views.display, name='display'),
+
     # /department/department_Name/
     url(r'^(?P<department_Name>[A-Za-z]+)/$', views.detail, name='detail'),
 
