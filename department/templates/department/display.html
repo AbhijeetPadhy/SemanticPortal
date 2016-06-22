@@ -1,0 +1,39 @@
+{% extends 'department/base.html' %}
+{% block title %}
+Departments
+{% endblock %}
+{% block body %}
+  <h2 class="page-header">Display Results!</h2>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Roll</th>
+      <th>Redg No.</th>
+      <th>BT501LG</th>
+      <th>BT502LG</th>
+      <th>BT503LG</th>
+      <th>OELG</th>
+      <th>BT551LG</th>
+      <th>BT552LG</th>
+      <th>CH581LG</th>
+      <th>SGPA</th>
+      <th>CGPA</th>
+    </tr>
+  {% for row in res1 %}
+  <tr>
+    <td>{{ row.fname }} {{ row.lname }}</td>
+    <td>{{ row.roll }}</td>
+    <td>{{ row.regno }}</td>
+    <td>{{ row.BT501LG }}</td>
+    <td>{{ row.BT502LG }}</td>
+    <td>{{ row.BT503LG }}</td>
+    <td>{{ row.OELG }}</td>
+    <td>{{ row.BT551LG }}</td>
+    <td>{{ row.BT552LG }}</td>
+    <td>{{ row.CH581LG }}</td>
+    <td>{{ row.sgpa }}</td>
+    <td>{{ row.cgpa }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
