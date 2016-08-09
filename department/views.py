@@ -21,9 +21,10 @@ def detail(request, department_Name):
     res1 = g.query("""
     PREFIX nit: <http://nitdgp.ac.in/>
 
-    SELECT ?name ?email ?research ?designation
+    SELECT ?fname ?lname ?email ?research ?designation
     WHERE {
-            ?x nit:name ?name.
+            ?x nit:fname ?fname.
+			?x nit:lname ?lname.
             ?x nit:email ?email.
             ?x nit:designation ?designation.
             ?x nit:research ?research
